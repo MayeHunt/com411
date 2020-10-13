@@ -1,9 +1,10 @@
 # Display a box
-print("   ##########")
-print("   #        #")
-print("   #  ^  ^  #")
-print("   ##########")
-print("    #      #")
-print(" ####      ####")
-print("    #      #")
-print("    ########")
+def run():
+  print("   ##########")
+  print("   #        #")
+  print("   #  ^  ^  #")
+  print("   ##########")
+  print("    #      #")
+  print(" ####      ####")
+  print("    #      #")
+  print("    ########")
