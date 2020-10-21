@@ -5,10 +5,7 @@ def movements():
 def run():
   print("Moving...")
   move = movements()
-  int0 = 0
-  int1 = 1
-  while int0 <= 6:
-    print("{} for {} steps".format(move[int0],move[int1]))
-    int0 = int0 + 2
-    int1 = int1 + 2
+  for x in range(0,len(move),2):
+    print("{} for {} steps".format(move[x],move[x+1]))
+
 run()
