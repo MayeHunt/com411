@@ -13,4 +13,3 @@ def run():
       good_steps.append(step[x])
   print("Good steps: {}, Bad steps: {}".format(len(good_steps),len(bad_steps)))
 run()
-
