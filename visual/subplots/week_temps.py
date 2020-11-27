@@ -19,10 +19,7 @@ def read_data():
 def run():
   data = read_data() 
 
-  fig, (ax1, ax2) = plt.subplots(1, 2)
-  ax1.plot(range(len(data['week1'])), data['week1'])
-  ax2.plot(range(len(data['week2'])), data['week2'])
-  plt.show()
+
 
   
 run() 
