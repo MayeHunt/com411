@@ -5,28 +5,30 @@ class Planet:
 
   #initialiser
   def __init__(self):
-    self.humans = [] 
-    self.robots = [] 
+    self.inhabitants = {
+    'humans' : [],
+    'robots' : [] 
+    }
 
   #instance methods
   def add_human(self, human):
-    self.humans.append(human)
+    self.inhabitants['humans'].append(human)
 
   def remove_human(self, human):
-    self.humans.remove(human)
+    self.inhabitants['humans'].remove(human)
 
   def add_robot(self, robot):
-    self.robots.append(robot)
+    self.inhabitants['robots'].append(robot)
     
   def remove_robot(self,robot):
-    self.robots.remove(robot)
+    self.inhabitants['robots'].remove(robot)
 
   #magic methods
   def __repr__(self):
-    return f'Humans:{self.humans}\nRobots:{self.robots}'
+    return f"Humans:{self.inhabitants['humans']}\nRobots:{self.inhabitants['robots']}"
 
   def __str__(self):
-    return f'This planet has {len(self.humans)} humans and {len(self.robots)} robots.'
+    return f"This planet has {len(self.inhabitants['humans'])} humans and {len(self.inhabitants['robots'])} robots."
 
 #testers
 if (__name__ == "__main__"):
@@ -50,7 +52,7 @@ if (__name__ == "__main__"):
   print(repr(planet))
 
   #remove humans & robots
-  planet.remove_human("Jeff") 
-  planet.remove_robot("BeepBoopMaye") 
+  planet.remove_human(jeff) 
+  planet.remove_robot(maye) 
 
   print(planet)
