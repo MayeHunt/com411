@@ -7,7 +7,7 @@ class Robot:
     #instance attributes
     self.name = name
     self.age = age
-    self.energy = 0
+    self.energy = Robot.MAX_ENERGY
 
   #magic methods
   def __repr__(self):
@@ -19,9 +19,37 @@ class Robot:
   def display(self):
     print(f"I am {self.name}")
 
+  def grow(self):
+    self.age += 1
+
+  def eat(self,amount):
+    totalEnergy = self.energy + amount
+    if(totalEnergy > Robot.MAX_ENERGY):
+      self.energy = Robot.MAX_ENERGY
+      return totalEnergy - self.energy
+    else:
+      self.energy = totalEnergy
+      return 0
+
+  def move(self,distance):
+    moveEnergy = self.energy - distance
+    if(moveEnergy < 0):
+      self.energy = 0
+      return self.energy - moveEnergy
+    else:
+      self.energy = moveEnergy
+      return 0
+
 #tester
 if (__name__ == "__main__"):
   robot = Robot()
   robot.display() 
   print(repr(robot))
-  print(str(robot))
+  robot.grow() 
+  robot.eat(10)
+  robot.move(50)
+  print(repr(robot))
+  robot.grow() 
+  robot.eat(10)
+  robot.move(50)
+  print(repr(robot))
