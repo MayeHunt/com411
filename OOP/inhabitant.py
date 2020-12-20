@@ -1,6 +1,5 @@
 from abc import ABC
 
-
 class Inhabitant(ABC):
 
   MAX_ENERGY = 100
