@@ -3,56 +3,48 @@ from robot import Robot
 
 class Planet:
 
+
   #initialiser
   def __init__(self):
-    self.inhabitants = {
-    'humans' : [],
-    'robots' : [] 
-    }
+    self.inhabitants = []
+
 
   #instance methods
-  def add_human(self, human):
-    self.inhabitants['humans'].append(human)
+  def add_inhabitant(self, inhabitant):
+    self.inhabitants.append(inhabitant)
 
-  def remove_human(self, human):
-    self.inhabitants['humans'].remove(human)
 
-  def add_robot(self, robot):
-    self.inhabitants['robots'].append(robot)
-    
-  def remove_robot(self,robot):
-    self.inhabitants['robots'].remove(robot)
+  def remove_inhabitant(self, inhabitant):
+    self.inhabitants.remove(inhabitant)
+
 
   #magic methods
   def __repr__(self):
-    return f"Humans:{self.inhabitants['humans']}\nRobots:{self.inhabitants['robots']}"
+    return f"Inhabitants:{self.inhabitants}"
+
 
   def __str__(self):
-    return f"This planet has {len(self.inhabitants['humans'])} humans and {len(self.inhabitants['robots'])} robots."
+    return f"This planet has {len(self.inhabitants)} inhabitants"
+
 
 #testers
 if (__name__ == "__main__"):
   planet = Planet()
-  print(repr(planet))
+  print(repr(Planet))
 
-  #add humans
+  #add inhabitants
   jeff = Human("Jeff")
-  planet.add_human(jeff)
+  planet.add_inhabitant(jeff)
   seb = Human("Seb")
-  planet.add_human(seb)
+  planet.add_inhabitant(seb)
   ari = Human("Ari")
-  planet.add_human(ari)
-
-  #add robots
-  maye = Robot("BeepBoopMaye")
-  planet.add_robot(maye) 
-  frank = Robot("BeepBoopFrank")
-  planet.add_robot(frank)
+  planet.add_inhabitant(ari)
+  maye = Robot("Maye")
+  planet.add_inhabitant(maye)
 
   print(repr(planet))
 
   #remove humans & robots
-  planet.remove_human(jeff) 
-  planet.remove_robot(maye) 
+  planet.remove_inhabitant(jeff) 
 
   print(planet)

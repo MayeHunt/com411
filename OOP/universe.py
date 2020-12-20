@@ -13,16 +13,16 @@ class Universe:
   #instance methods
   def generate(self):
     #create new planet object
-    planet = Planet()
+    planet = [Planet()]
 
     #add random number of humans & robots to planet object (loop + random)
-    for x in range(random.randint(1,10)):
-      robot = Robot(f"Robot{x}")
-      planet.add_robot(robot)
+    for index in range(random.randint(1, 10)):
+      robot = Robot(f"Robot{index}")
+      planet.append(robot)
 
-    for x in range(random.randint(1,10)):
-      human = Human(f"Human{x}")
-      planet.add_human(human)
+    for index in range(random.randint(1, 10)):
+      human = Human(f"Human{index}")
+      planet.append(human)
 
     #adds planet object to list of planets
     self.planets.append(planet) 

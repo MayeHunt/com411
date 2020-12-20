@@ -1,8 +1,13 @@
 from inhabitant import Inhabitant
 
 class Robot(Inhabitant):
-  #class attributes
-  MAX_ENERGY = 100
+  #class attribute
+  laws = "Protect, Obey and Survive"
+
+  #static method
+  @staticmethod
+  def the_laws():
+    print(Robot.laws)  
 
   #initialiser
   def __init__(self, name="Robot", age=0):

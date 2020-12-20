@@ -1,8 +1,7 @@
 from inhabitant import Inhabitant
 
 class Human(Inhabitant):
-  #class attributes
-  MAX_ENERGY = 100
+
 
   #initialiser
   def __init__(self, name="Human", age=0):
